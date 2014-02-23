@@ -4,14 +4,14 @@
 $background-color:  #dc5945;
 
 $title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.3);
-$tick-color:        rgba(0, 0, 0, 0.4);
+$moreinfo-color:    rgba(255, 255, 255, 0.9);
+$tick-color:        rgba(0, 0, 0, 0.9);
 
 
 // ----------------------------------------------------------------------------
 // Widget-graph styles
 // ----------------------------------------------------------------------------
-.widget-graph {
+.widget-mgraph {
 
   background-color: $background-color;
   position: relative;
@@ -19,8 +19,8 @@ $tick-color:        rgba(0, 0, 0, 0.4);
 
   svg {
     position: absolute;
-    opacity: 0.6;
-    fill-opacity: 0.5;
+    opacity: 0.9;
+    fill-opacity: 0.8;
     left: 0px;
     top: 0px;
   }

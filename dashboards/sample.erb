@@ -1,33 +1,55 @@
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="karma2" data-view="Meter" data-title="Random 100" data-min="0" data-max="150"></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_searches" data-view="Graph" data-title="Searches per 1 minutes" style="background-color:#005ff9"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_widget1" data-view="Graph" data-title="Widget inits" style="background-color:#005ff9"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="Number" data-title="Profit" data-moreinfo="Without multiplier
+" data-prefix="₶"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_clicks" data-view="Graph" data-title="Clicks per 10 minutes" style="background-color:#e9ec05"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_widget2" data-view="Graph" data-title="Widget searches" style="background-color:#e9ec05"></div>
+    </li>
+    <li data-row="2" data-col="5" data-sizex="2" data-sizey="2">
+      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Profit leaders" data-moreinfo="# of times said around the office"></div>
+    </li>
+<li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+  <div data-id="server_status" data-view="ServerStatus" data-title="Server Status"></div>
+</li>
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_paidbookings" data-view="Graph" data-title="Paid bookings per 60 minutes" style="background-color:#50ae2b"></div>
+    </li>
+    <li data-row="3" data-col="2" data-sizex="2" data-sizey="1">
+      <div data-id="tp_convergence_widget3" data-view="Graph" data-title="Widget clicks" style="background-color:#50ae2b"></div>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="3" data-sizey="1">
+      <div data-id="multitest" data-view="Mgraph" data-title="Multi Convergence" style="background-color:#ff9618"></div>
+
+    </li>
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="synergy" data-view="Meter" data-title="Days without pizdung" data-min="0" data-max="30"></div>
+    </li>
+    <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="ci_travis_radar" data-view="Travis" data-unordered="true" data-title="Radar"></div>
+    </li>
+    <li data-row="6" data-col="5" data-sizex="1" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
-    </li>
 
-    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Current Valuation" data-moreinfo="In billions" data-prefix="$"></div>
-    </li>
 
-    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
-    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
-    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#ff9618"></div>
+    <li data-row="5" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="ci_travis_zendesk" data-view="Travis" data-unordered="true" data-title="Zendesk"></div>
     </li>
   </ul>
   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
