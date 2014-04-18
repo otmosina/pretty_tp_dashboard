@@ -1,10 +1,10 @@
 
 
-COUNT_COL = 12
+
 points = []
 i = 0
 
-COUNT_COL.downto(0) do |hour_ago|
+Constant.widget_count_columns.downto(0) do |hour_ago|
   value = ReportWidget.fetch( hour_ago, 'inits' )[0]
   points << { x: i, y: value }
   i += 1
