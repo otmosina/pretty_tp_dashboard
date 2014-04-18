@@ -8,7 +8,11 @@
       <div data-id="tp_convergence_widget1" data-view="Graph" data-title="Widget inits" style="background-color:#005ff9"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="valuation" data-view="Number" data-title="Profit" data-moreinfo="Without multiplier
+      <div data-id="valuation" data-view="Number" data-title="Clear profit" data-moreinfo="Without multiplier
+" data-prefix="₶"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="goal_profit" data-view="Number" data-title="Goal Profit" data-moreinfo="Without multiplier
 " data-prefix="₶"></div>
     </li>
     <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
@@ -20,9 +24,6 @@
     <li data-row="2" data-col="5" data-sizex="2" data-sizey="2">
       <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Profit leaders" data-moreinfo="# of times said around the office"></div>
     </li>
-<li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
-  <div data-id="server_status" data-view="ServerStatus" data-title="Server Status"></div>
-</li>
 
     <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="tp_convergence_paidbookings" data-view="Graph" data-title="Paid bookings per 60 minutes" style="background-color:#50ae2b"></div>
@@ -36,10 +37,13 @@
 
     </li>
     <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Days without pizdung" data-min="0" data-max="30"></div>
+      <div data-id="synergy" data-view="Meter" data-title="Days without pizdung" data-min="0" data-max="<%= Constant.final_goal%>"></div>
     </li>
     <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
       <div data-id="ci_travis_radar" data-view="Travis" data-unordered="true" data-title="Radar"></div>
+    </li>
+    <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="server_status" data-view="ServerStatus" data-title="Server Status"></div>
     </li>
     <li data-row="6" data-col="5" data-sizex="1" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
