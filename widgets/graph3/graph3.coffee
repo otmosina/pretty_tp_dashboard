@@ -32,19 +32,23 @@ class Dashing.Graph3 extends Dashing.Widget
       ]
     )
 
-    @graph.series[0].data = @get('today') if @get('today')
+    #if @get('min') != null then @graph.max = @get('min')
+    #if @get('max') != null then @graph.max = @get('max')
+
+    @graph.series[2].data = @get('today') if @get('today')
     @graph.series[1].data = @get('week_ago') if @get('week_ago')
-    @graph.series[2].data = @get('month_ago') if @get('month_ago')
+    @graph.series[0].data = @get('month_ago') if @get('month_ago')
 
     x_axis = new Rickshaw.Graph.Axis.X(graph: @graph, tickFormat: @xTickFormat)
     y_axis = new Rickshaw.Graph.Axis.Y(graph: @graph, tickFormat: Rickshaw.Fixtures.Number.formatKMBT)
+
     @graph.render()
 
   onData: (data) ->
     if @graph
-      @graph.series[0].data = data.today
+      @graph.series[2].data = data.today
       @graph.series[1].data = data.week_ago
-      @graph.series[2].data = data.month_ago
+      @graph.series[0].data = data.month_ago
       @graph.render()
 
     $node = $(@node)
@@ -52,16 +56,17 @@ class Dashing.Graph3 extends Dashing.Widget
     week_ago = data.week_ago[data.week_ago.length - 1].y
     threshold = parseFloat($node.data('alert-threshold') || '0.5')
 
-    if now / week_ago < threshold
-      @alert = window.setInterval((->
-        if (new Date()).getMilliseconds() > 500
-          $node.css('background-color', '#cd4f39')
-        else
-          $node.css('background-color', '#20252a')
-      ), 500)
-    else
-      window.clearInterval(@alert)
-      $node.css('background-color', '#20252a')
+
+    #if now / week_ago < threshold
+    #  @alert = window.setInterval((->
+    #    if (new Date()).getMilliseconds() > 500
+    #      $node.css('background-color', '#cd4f39')
+    #    else
+    #      $node.css('background-color', '#20252a')
+    #  ), 500)
+    #else
+    #  window.clearInterval(@alert)
+    #  $node.css('background-color', '#20252a')
 
   xTickFormat: (val) ->
     return '' if val == 0

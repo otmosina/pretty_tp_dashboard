@@ -24,10 +24,11 @@ $tick-color:        rgba(255, 255, 255, 0.6);
     top: 0px;
 
     path {
-      stroke-width: 3px;
-      fill-opacity: 0.2;
 
+      stroke-width: 6px;
+      fill-opacity: 0.6;
       &:nth-child(1) {
+        top: 110px;
         stroke: #b3ee3a;
       }
       &:nth-child(2) {
@@ -62,7 +63,7 @@ $tick-color:        rgba(255, 255, 255, 0.6);
   .more-info {
     color: $moreinfo-color;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 10px;
     margin-top: 0;
   }
 
@@ -73,14 +74,14 @@ $tick-color:        rgba(255, 255, 255, 0.6);
   .legend {
     position: absolute;
     z-index: 9999;
-    top: 15px;
+    top: 300px;
     text-transform: uppercase;
     font-weight: 600;
     text-shadow: 1px 1px rgba(0, 0, 0, .8);
 
     &.month-ago {
       right: 220px;
-      color: #cd4f39;
+      color: #b3ee3a;
     }
     &.week-ago {
       right: 100px;
@@ -88,7 +89,7 @@ $tick-color:        rgba(255, 255, 255, 0.6);
     }
     &.today {
       right: 15px;
-      color: #b3ee3a;
+      color: #cd4f39;
     }
   }
 

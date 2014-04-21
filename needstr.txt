@@ -1,0 +1,5 @@
+
+select SUM(bookings)+SUM(hotels_clicks)+SUM(hotels_clicks)+SUM(clicks) as all_profit, SUM(total) as aff_profit from mydbr_travelpayouts.affiliate_profits
+where date > '2014-04-01'
+
+

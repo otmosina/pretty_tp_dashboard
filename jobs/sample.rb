@@ -9,10 +9,11 @@ url = 'http://tp.aviasales.ru/report.php?r=106&u1=0&m=4&h=d809f270d0500bcc748b87
 get_all_profit_url = "http://tp.aviasales.ru/report.php?r=141&u1=2014-04-01&m=4&h=1c2d65e341efacd518223d0ea349305e753cfd28&export=json"
 last_valuation = data
 
-general_goal_profit = Constant.final_goal
+general_goal_profit = Constant.current_date_profit_goal#Constant.final_goal
 
 
-SCHEDULER.every '2s' do
+SCHEDULER.every '12s' do
+  general_goal_profit = Constant.current_date_profit_goal
   #last_valuation = current_valuation
   #last_karma     = current_karma
   current_valuation = Oj.load(RestClient.get(url))[0][1]

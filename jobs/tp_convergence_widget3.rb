@@ -12,6 +12,8 @@
 #end
 
 
+=begin
+
 points = []
 i = 0
 
@@ -36,6 +38,7 @@ SCHEDULER.every '20s' do
   send_event('tp_convergence_widget3', points: points)
 end
 
+=end
 
 
 
