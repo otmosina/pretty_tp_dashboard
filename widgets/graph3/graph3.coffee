@@ -9,11 +9,12 @@ class Dashing.Graph3 extends Dashing.Widget
   ready: ->
     $node = $(@node)
     $container = $node.parent()
+
     width =
       Dashing.widget_base_dimensions[0] * $container.data("sizex") +
       Dashing.widget_margins[0] * 2 * ($container.data("sizex") - 1)
     height = Dashing.widget_base_dimensions[1] * $container.data("sizey")
-    $node.css('background-color', $node.data("bgcolor"))
+    $node.css('background-color', '#20252a')
 
     $node.append $("<div class='legend month-ago'>month ago</div>")
     $node.append $("<div class='legend week-ago'>week ago</div>")
@@ -49,16 +50,18 @@ class Dashing.Graph3 extends Dashing.Widget
     $node = $(@node)
     now = data.today[data.today.length - 1].y
     week_ago = data.week_ago[data.week_ago.length - 1].y
-    if now / week_ago < 0.5
+    threshold = parseFloat($node.data('alert-threshold') || '0.5')
+
+    if now / week_ago < threshold
       @alert = window.setInterval((->
         if (new Date()).getMilliseconds() > 500
           $node.css('background-color', '#cd4f39')
         else
-          $node.css('background-color', $node.data("bgcolor"))
+          $node.css('background-color', '#20252a')
       ), 500)
     else
       window.clearInterval(@alert)
-      $node.css('background-color', $node.data("bgcolor"))
+      $node.css('background-color', '#20252a')
 
   xTickFormat: (val) ->
     return '' if val == 0
