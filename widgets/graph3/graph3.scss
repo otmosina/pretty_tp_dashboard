@@ -1,0 +1,95 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #dc5945;
+
+$title-color:       rgba(255, 255, 255, 0.8);
+$moreinfo-color:    rgba(255, 255, 255, 0.3);
+$tick-color:        rgba(255, 255, 255, 0.6);
+
+
+// ----------------------------------------------------------------------------
+// Widget-graph styles
+// ----------------------------------------------------------------------------
+.widget-graph3 {
+
+  background-color: $background-color;
+  position: relative;
+  // overflow: hidden;
+
+
+  svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    path {
+      stroke-width: 3px;
+      fill-opacity: 0.2;
+
+      &:nth-child(1) {
+        stroke: #b3ee3a;
+      }
+      &:nth-child(2) {
+        stroke: #ee9a49;
+      }
+      &:nth-child(3) {
+        stroke: #8b3626;
+      }
+    }
+
+    .x_ticks_d3, .y_ticks {
+      .tick text {
+        font-size: 20px;
+        fill: $tick-color;
+        opacity: 0.5;
+        padding-bottom: 3px;
+        text-shadow: 1px 1px rgba(0, 0, 0, .8);
+      }
+    }
+  }
+
+  .title, .value {
+    position: relative;
+    z-index: 99;
+    text-shadow: 2px 2px rgba(0, 0, 0, .5);
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .domain {
+    display: none;
+  }
+
+  .legend {
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(0, 0, 0, .8);
+
+    &.month-ago {
+      right: 220px;
+      color: #cd4f39;
+    }
+    &.week-ago {
+      right: 100px;
+      color: #ee9a49;
+    }
+    &.today {
+      right: 15px;
+      color: #b3ee3a;
+    }
+  }
+
+}
