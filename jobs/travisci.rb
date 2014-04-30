@@ -1,28 +1,28 @@
-require 'travis'
-require 'travis/pro'
-
-def update_builds(repository, config)
-  builds = []
-  repo = nil
-
-  if config["type"] == "pro"
-    Travis::Pro.access_token = config["auth_token"]
-    repo = Travis::Pro::Repository.find(repository)
-  else  # Standard namespace
-    Travis.access_token = config["auth_token"]
-    repo = Travis::Repository.find(repository)
-  end
-
-  build = repo.last_build
-  build_info = {
-    label: "Build #{build.number}",
-    value: "[#{build.branch_info}], #{build.state} in #{build.duration}s",
-    state: build.state
-  }
-  builds << build_info
-
-  builds
-end
+#require 'travis'
+#require 'travis/pro'
+#
+#def update_builds(repository, config)
+#  builds = []
+#  repo = nil
+#
+#  if config["type"] == "pro"
+#    Travis::Pro.access_token = config["auth_token"]
+#    repo = Travis::Pro::Repository.find(repository)
+#  else  # Standard namespace
+#    Travis.access_token = config["auth_token"]
+#    repo = Travis::Repository.find(repository)
+#  end
+#
+#  build = repo.last_build
+#  build_info = {
+#    label: "Build #{build.number}",
+#    value: "[#{build.branch_info}], #{build.state} in #{build.duration}s",
+#    state: build.state
+#  }
+#  builds << build_info
+#
+#  builds
+#end
 
 #config_file = File.dirname(File.expand_path(__FILE__)) + '/../config/travisci.yml'
 #config = YAML::load(File.open(config_file))

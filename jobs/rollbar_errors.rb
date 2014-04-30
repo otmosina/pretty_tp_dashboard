@@ -10,7 +10,7 @@ array_errors = rollbar_errors.all_errors
 top_last_errors = array_errors.sort_by{|a|a["last_occurrence_timestamp"]}.reverse[0..5]
 pretty_last_errors=top_last_errors.map do |elem|
   {
-    title: elem["title"],
+    title: elem["title"][0..45]+"..",
     err_count: elem["total_occurrences"],
     last_date: Time.at(elem["last_occurrence_timestamp"])
   }

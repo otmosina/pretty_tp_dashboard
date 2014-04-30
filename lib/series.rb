@@ -17,12 +17,14 @@ class Series
     @series[0][:data].shift
     @series[1][:data].shift
     @series[2][:data].shift
+    update_x_coord!
   end
 
   def all_pop
     @series[0][:data].pop
     @series[1][:data].pop
     @series[2][:data].pop
+    update_x_coord!
   end
 
   def update_x_coord!

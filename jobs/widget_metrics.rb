@@ -5,7 +5,6 @@
 #report_name = 'inits'
 
 
-
 [ 'inits', 'searches' ].each do |report_name|
   series = Series.new
   i = 0
@@ -43,7 +42,6 @@
       series.add_point( s_index, last_x, y)
     end
     puts series.get.to_s
-    #send_event("widget_#{report_name}", series: series.get)
     send_event("widget_#{report_name}", {
       today: series.get[0][:data],
       week_ago: series.get[1][:data],
@@ -51,6 +49,7 @@
     })
   end
 end
+
 
 
 

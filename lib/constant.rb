@@ -21,7 +21,7 @@ module Constant
   end
 
   def time_shifts
-    [ 0, 24, 24*7]
+    [ 0, 24, 24*7 ]
   end
 
   extend self

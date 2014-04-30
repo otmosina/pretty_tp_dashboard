@@ -16,6 +16,10 @@ class RollbarFetcher
     return data["result"]["items"]
   end
 
+  def apply_conditions!
+    @all_errors.map!{|elem| elem if elem["level"] == "error"}.compact!
+  end
+
   def fetch_all
     page = 1
     errors = fetch_page page
@@ -24,6 +28,7 @@ class RollbarFetcher
       page += 1
       errors = fetch_page page
     end
+    apply_conditions!
   end
 
   def all_errors
