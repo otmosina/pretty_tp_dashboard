@@ -13,7 +13,7 @@ require 'mina/git'
 set :user, 'aviasales'
 set :domain, 'dashboard.int.avs.io'
 set :deploy_to, '/home/aviasales/dashing_tp'
-set :repository, 'https://github.com/otmosina/dashing_tp.git'
+set :repository, 'https://github.com/otmosina/pretty_tp_dashboard.git'
 set :branch, 'master'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.

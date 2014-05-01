@@ -1,10 +1,14 @@
 require 'oj'
 require 'rest-client'
 require 'pry'
+#TOKENS = {
+#  travelpayouts: { name: "TP", token: "eed4f2b3576b4a4dac5890abc675d016" },
+#  klit:          { name: "Klit",token: "ec5c67a3c4664bc6ad1bb9f6d800488c" },
+#  pulse:         { name: "Pulse",token: "53c101b0c2b9410fa56e00e9d3af6161" }
+#}
+
 TOKENS = {
-  travelpayouts: { name: "TP", token: "eed4f2b3576b4a4dac5890abc675d016" },
-  klit:          { name: "Klit",token: "ec5c67a3c4664bc6ad1bb9f6d800488c" },
-  pulse:         { name: "Pulse",token: "53c101b0c2b9410fa56e00e9d3af6161" }
+  travelpayouts: { name: "TP", token: "eed4f2b3576b4a4dac5890abc675d016" }
 }
 
 

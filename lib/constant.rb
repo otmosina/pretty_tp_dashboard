@@ -17,7 +17,7 @@ module Constant
   end
 
   def graph_count_columns
-    return 12
+    return 3
   end
 
   def time_shifts
