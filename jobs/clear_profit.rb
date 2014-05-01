@@ -6,7 +6,7 @@ clear_profit_url_now = CLEAR_PROFIT_URL % 0
 
 last_day_clear_profit = Oj.load(RestClient.get(clear_profit_url_day_ago))[0][1]
 
-SCHEDULER.every '12s' do
+SCHEDULER.every '60s' do
   current_clear_profit = Oj.load(RestClient.get(clear_profit_url_now))[0][1]
   send_event('clear_profit', { current: current_clear_profit, last: last_day_clear_profit })
 end

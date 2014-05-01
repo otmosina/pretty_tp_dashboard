@@ -19,7 +19,7 @@
 
   last_hour = Report.fetch_widgetstat( 0, report_name )[1] rescue Time.now.utc.hour
 
-  SCHEDULER.every '10s' do
+  SCHEDULER.every '60s' do
     last_x = series.last_x
     if Time.now.utc.hour != last_hour
       series.all_shift

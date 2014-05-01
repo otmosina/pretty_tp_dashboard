@@ -45,7 +45,7 @@
 
 
   report_names.each do |report_name|
-    SCHEDULER.every '10s' do
+    SCHEDULER.every '60s' do
       last_x = series[report_name].last_x
       last_hour = get_report_last_hour report_name
       Time.now.utc.hour != last_hour ? series[report_name].all_shift : series[report_name].all_pop

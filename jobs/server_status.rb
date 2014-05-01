@@ -23,7 +23,7 @@ servers = [
     #{name: 'server2', url: 'https://www.test2.com', method: 'http'},
     #{name: 'server3', url: '192.168.0.1', method: 'ping'}]
 
-SCHEDULER.every '30s', :first_in => 0 do |job|
+SCHEDULER.every '60s', :first_in => 0 do |job|
 
   statuses = Array.new
 
